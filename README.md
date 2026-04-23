@@ -1,119 +1,141 @@
-📞 Odoo + 3CX Smart Call Intelligence
+# 📞 Odoo + 3CX Smart Call Intelligence
 
-🚀 Turn Every Call Into Revenue
-🚀 حوّل كل مكالمة إلى عميل ومبيعات
+> 🔥 **Limited Offer:** Get Setup + Live Demo Today via WhatsApp
 
-🌐 Live Demo / الموقع
+🚀 **Turn Every Call Into Revenue**
 
-👉 جرب النظام وشوف الأسعار حسب بلدك تلقائي:
+A powerful integration between **Odoo CRM** and **3CX Phone System** that automatically converts calls into customers, leads, and real-time sales insights.
+
+---
+
+## 🌐 Live Demo
+
+👉 See the system in action (auto-detects your country & pricing):
 
 🔗 https://ahmedredaelgoal.github.io/callflow-3cx-odoo-ai/
 
-🇬🇧 English
-💥 Problem
+---
+
+## 🌍 Language
+
+- 🇬🇧 English (Default)
+- 🇸🇦 Arabic 👉 Available inside the live demo page
+
+---
+
+## 💥 Problem
 
 Most companies lose customers because:
 
-Calls are not tracked
-No integration between phone system and CRM
-Sales opportunities are missed
+- Calls are not tracked  
+- No integration between phone system and CRM  
+- Sales opportunities are missed  
 
-👉 Result: Lost revenue
+👉 **Result: Lost revenue**
 
-💡 Solution
+---
 
-This system connects 3CX + Odoo and automatically converts every call into:
+## 💡 Solution
 
-👤 Customer
-💰 Lead
-📋 Call Log
-📊 Sales Analytics
-⚡ Features
-Real-time call tracking
-Smart caller identification
-Automatic lead creation
-CRM integration
-Click-to-Call
-Plug & Play setup
-Sales dashboard
-🚀 Installation
-1. Install module in Odoo
-2. Add API Key
-3. Connect 3CX
-4. Start receiving calls instantly
-💰 Pricing
+This system connects **3CX + Odoo** and converts every call into:
 
-👉 Visit the live page to see your price:
+- 👤 Customer  
+- 💰 Lead  
+- 📋 Call Log  
+- 📊 Sales Analytics  
 
-🔗 https://ahmedredaelgoal.github.io/callflow-3cx-odoo-ai/
+---
 
-💬 Contact
-WhatsApp 
-Email: odoo.dev2015@gmail.com
-🇸🇦 العربية
-💥 المشكلة
+## ⚡ Features
 
-الشركات بتخسر عملاء يوميًا بسبب:
+- 📡 Real-time call tracking  
+- 🧠 Smart caller identification  
+- 💰 Automatic lead creation  
+- 📊 Sales dashboard  
+- ⚡ Click-to-Call inside Odoo  
+- 🔌 Plug & Play setup  
+- 🔔 Real-time notifications  
 
-عدم تسجيل المكالمات
-عدم ربط الهاتف بالـ CRM
-ضياع فرص البيع
+---
 
-👉 النتيجة: خسارة أرباح
+## 🚀 Installation
 
-💡 الحل
+1. Install the module in Odoo  
+2. Enter API Key  
+3. Connect 3CX  
+4. Start receiving calls instantly  
 
-نربط بين 3CX + Odoo ونحوّل كل مكالمة إلى:
+---
 
-👤 عميل
-💰 فرصة بيع (Lead)
-📋 سجل مكالمات
-📊 تحليل مبيعات
-⚡ المميزات
-تتبع المكالمات لحظيًا
-التعرف الذكي على العملاء
-إنشاء Leads تلقائي
-Click-to-Call
-Dashboard احترافي
-تشغيل بدون تعقيد
-🚀 طريقة التشغيل
-1. تثبيت الموديول داخل Odoo
-2. إدخال API Key
-3. ربط 3CX
-4. يبدأ النظام فورًا
-💰 الأسعار
-ي)
+## 💰 Pricing
 
-👉 شاهد الأسعار الآن:
+👉 Pricing depends on your country  
+👉 View dynamic pricing here:
 
 🔗 https://ahmedredaelgoal.github.io/callflow-3cx-odoo-ai/
 
-📞 التواصل
-واتساب 
-📧 odoo.dev2015@gmail.com
-🧠 Architecture
-Secure API endpoint (/api/3cx/call)
-Call normalization & smart matching
-Auto lead & partner creation
-Multi-company support
-Real-time notifications
-Analytics dashboard
-🔐 Security
-API Key authentication
-IP Whitelist
-Rate limiting
-Idempotency protection
-Full audit logging
-💰 Business Value
+---
 
-📞 Every missed call = lost money
-💰 This system ensures that never happens again
+## 🧠 Architecture
 
-📄 License
+- Secure API endpoint `/api/3cx/call`  
+- Call normalization & smart matching  
+- Auto lead & partner creation  
+- Multi-company support  
+- Real-time notifications  
+- Analytics dashboard  
+
+---
+
+## 🔐 Security
+
+- API Key authentication  
+- IP Whitelist  
+- Rate limiting  
+- Idempotency protection  
+- Full audit logging  
+
+---
+
+## 💰 Business Value
+
+📞 **Every missed call = lost money**
+
+This system ensures that never happens again.
+
+---
+
+## 💬 Contact
+
+🚀 Ready to increase your sales?
+
+### 👉 WhatsApp
+
+[![WhatsApp Egypt](https://img.shields.io/badge/WhatsApp-Egypt-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/201096824653?text=Hi%20I%20want%20a%20demo%20of%20Odoo%203CX%20Smart%20Call%20Intelligence)
+
+[![WhatsApp Gulf](https://img.shields.io/badge/WhatsApp-Gulf%20%2F%20International-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/966565245950?text=Hi%20I%20want%20a%20demo%20of%20Odoo%203CX%20Smart%20Call%20Intelligence)
+
+---
+
+### 📧 Email
+
+odoo.dev2015@gmail.com
+
+---
+
+## ⭐ Support
+
+If this project helps you, please ⭐ star the repository.
+
+---
+
+## 📄 License
 
 MIT License
 
-⭐ Final Message
+---
 
-🚀 This is not just an integration
-💰 This is a sales machine
+## 🚀 Final Message
+
+💰 This is not just an integration  
+📞 This is a **sales machine**
