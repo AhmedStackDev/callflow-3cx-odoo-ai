@@ -43,13 +43,12 @@ Sales dashboard
 4. Start receiving calls instantly
 💰 Pricing
 
-👉 Prices are dynamically adjusted based on your country
 👉 Visit the live page to see your price:
 
 🔗 https://ahmedredaelgoal.github.io/callflow-3cx-odoo-ai/
 
 💬 Contact
-WhatsApp (Auto based on country)
+WhatsApp 
 Email: odoo.dev2015@gmail.com
 🇸🇦 العربية
 💥 المشكلة
@@ -83,15 +82,14 @@ Dashboard احترافي
 3. ربط 3CX
 4. يبدأ النظام فورًا
 💰 الأسعار
-
-💡 الأسعار بتتغير تلقائي حسب بلدك (مصر / الخليج / دولي)
+ي)
 
 👉 شاهد الأسعار الآن:
 
 🔗 https://ahmedredaelgoal.github.io/callflow-3cx-odoo-ai/
 
 📞 التواصل
-واتساب (يتغير تلقائي حسب الدولة)
+واتساب 
 📧 odoo.dev2015@gmail.com
 🧠 Architecture
 Secure API endpoint (/api/3cx/call)
