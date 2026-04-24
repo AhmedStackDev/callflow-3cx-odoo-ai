@@ -3,358 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Odoo + 3CX Smart Call Intelligence</title>
+<title>Smart Call Intelligence</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#0b1220;
-color:white;
-line-height:1.6;
-}
+body{margin:0;font-family:Arial;background:#0b1220;color:white}
+
+/* TOP BAR */
+.topbar{text-align:center;background:#111827;padding:10px}
 
 /* HERO */
-.hero{
-text-align:center;
-padding:120px 20px;
-background:linear-gradient(135deg,#2563eb,#1e40af);
-}
+.hero{text-align:center;padding:100px;background:linear-gradient(135deg,#2563eb,#1e40af)}
 
-h1{font-size:42px;margin-bottom:10px;}
-p{font-size:18px;opacity:.9;}
-
-.btn{
-display:inline-block;
-padding:14px 28px;
-margin:10px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-transition:.3s;
-}
-.btn:hover{transform:scale(1.05)}
-
+.btn{padding:12px 25px;border-radius:10px;text-decoration:none;margin:5px;display:inline-block}
 .green{background:#25D366;color:white}
 .blue{background:#3b82f6;color:white}
 
-/* SECTIONS */
-section{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
-}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 
 /* CARD */
-.card{
-background:#111827;
-padding:20px;
-border-radius:14px;
-margin:15px 0;
-border:1px solid #1f2937;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-/* PRICING */
-.price-card{
-background:#111827;
-padding:25px;
-border-radius:16px;
-border:1px solid #1f2937;
-text-align:center;
-transition:.3s;
-position:relative;
-}
-
-.price-card:hover{
-transform:translateY(-6px);
-border-color:#25D366;
-}
-
-/* BEST PLAN */
-.best{
-border:2px solid #25D366;
-transform:scale(1.05);
-}
-
-.badge{
-position:absolute;
-top:-10px;
-right:10px;
-background:#25D366;
-color:black;
-padding:6px 10px;
-border-radius:8px;
-font-size:12px;
-font-weight:bold;
-}
+.card{background:#111827;padding:20px;border-radius:15px;text-align:center;border:1px solid #1f2937}
+.best{border:2px solid #25D366}
 
 /* PRICE */
-.price{
-font-size:26px;
-color:#25D366;
-font-weight:bold;
-margin:10px 0;
+.price{color:#25D366;font-size:24px}
+
+/* POPUP */
+#popup{
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.8);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+.popup-box{
+background:#111827;padding:30px;border-radius:15px;text-align:center;
 }
 
-/* OLD PRICE */
-.old{
-text-decoration:line-through;
-opacity:.5;
-font-size:14px;
-}
-
-/* CTA */
-.buy{
-display:block;
-margin-top:15px;
-padding:12px;
-border-radius:10px;
-background:#25D366;
-color:black;
-font-weight:bold;
-text-decoration:none;
-}
-
-/* OFFER */
-.offer{
-text-align:center;
-background:#dc2626;
-padding:20px;
-margin:40px;
-border-radius:12px;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:30px;
-opacity:.7;
-}
-
-/* FLOAT BTN */
-#whatsappFloat{
+/* NOTIFY */
+#notify{
 position:fixed;
 bottom:20px;
-left:20px;
-background:#25D366;
+right:20px;
+background:#111827;
 padding:15px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-color:white;
-box-shadow:0 0 10px rgba(0,0,0,.4);
+border-radius:10px;
+display:none;
 }
+
+/* REVIEWS */
+.review{background:#111827;padding:15px;margin:10px;border-radius:10px}
+
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<div class="topbar">
+👀 <span id="viewers">12</span> | 🔥 <span id="orders">5</span> طلب اليوم
+</div>
+
 <div class="hero">
-<h1>📞 حوّل كل مكالمة إلى عميل</h1>
-<p>كل مكالمة = فرصة بيع… متخليش ولا واحدة تضيع</p>
-
-<a class="btn green" id="heroBtn" target="_blank">🚀 ابدأ الآن</a>
-<a class="btn blue" href="#pricing">💰 شوف السعر</a>
+<h1>📞 حوّل كل مكالمة إلى فلوس</h1>
+<a class="btn green" id="heroBtn">ابدأ الآن</a>
 </div>
 
-<!-- PROBLEM -->
-<section>
-<h2>💥 المشكلة</h2>
-<div class="card">
-<ul>
-<li>مكالمات بتضيع بدون تسجيل</li>
-<li>مفيش ربط بين 3CX و CRM</li>
-<li>مبيعات بتضيع كل يوم</li>
-</ul>
-</div>
-</section>
-
-<!-- SOLUTION -->
-<section>
-<h2>💡 الحل</h2>
-<div class="card">
-<ul>
-<li>📞 تسجيل كل مكالمة تلقائي</li>
-<li>👤 إنشاء عميل أو Lead فورًا</li>
-<li>📊 تحليل مبيعات لحظي</li>
-</ul>
-</div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-<h2>💰 اختر الخطة المناسبة</h2>
+<section style="padding:40px">
+<h2>💰 الأسعار</h2>
 <div class="grid" id="pricingBox"></div>
+
+<h3>⚠️ متاح فقط <span id="slots">3</span> أماكن</h3>
 </section>
 
-<!-- CONTACT -->
-<section>
-<h2>📞 تواصل الآن</h2>
-<div class="card" id="contactBox"></div>
-<a class="btn green" id="whatsappBtn" target="_blank">💬 واتساب</a>
+<section style="padding:40px">
+<h2>⭐ آراء العملاء</h2>
+
+<div class="review">🔥 النظام زود مبيعاتي 40%</div>
+<div class="review">💰 أفضل استثمار عملته</div>
+<div class="review">🚀 سهل وسريع وفعّال</div>
+
 </section>
 
-<!-- OFFER -->
-<div class="offer">
-🔥 عرض خاص ينتهي خلال:<br><br>
-<span id="timer" style="font-size:24px;font-weight:bold;"></span>
+<div id="notify"></div>
+
+<!-- POPUP -->
+<div id="popup">
+<div class="popup-box">
+<h2>🔥 عرض خاص لأول زيارة</h2>
+<p>خصم خاص لو بدأت الآن</p>
+<button onclick="closePopup()">ابدأ الآن</button>
 </div>
-
-<footer>Turn Calls Into Revenue 💰</footer>
-
-<a id="whatsappFloat">💬</a>
+</div>
 
 <script>
 
-// DEFAULT سريع
+// COUNTRY
 render("INTL");
-
-// API
 fetch("https://ipapi.co/json/")
-.then(res => res.json())
-.then(data => {
-if(data && data.country){
-render(data.country);
-}
-})
+.then(r=>r.json())
+.then(d=>render(d.country))
 .catch(()=>{});
 
-// RENDER
 function render(c){
 
-let pricingBox = document.getElementById("pricingBox");
-let contactBox = document.getElementById("contactBox");
+let box=document.getElementById("pricingBox");
 
-// 🇪🇬 مصر
-if(c === "EG"){
-
-pricingBox.innerHTML = `
-
-<div class="price-card">
-<h3>Starter</h3>
-<div class="old">1600 جنيه</div>
-<div class="price">1200 جنيه / شهر</div>
-<p>تتبع مكالمات</p>
-<a class="buy" href="#">ابدأ الآن</a>
+if(c==="EG"){
+box.innerHTML=`
+<div class="card">
+<h3>اشتراك</h3>
+<div class="price">1200 جنيه</div>
+<a class="buy" data-plan="اشتراك">اشترى الآن <span class="count">10</span></a>
 </div>
 
-<div class="price-card best">
-<div class="badge">الأكثر مبيعًا</div>
-<h3>Pro</h3>
-<div class="old">3200 جنيه</div>
-<div class="price">2500 جنيه / شهر</div>
-<p>Leads + Dashboard</p>
-<a class="buy" href="#">ابدأ الآن</a>
-</div>
-
-<div class="price-card">
-<h3>Enterprise</h3>
-<div class="old">7000 جنيه</div>
-<div class="price">5000+ جنيه</div>
-<p>كل المميزات + دعم كامل</p>
-<a class="buy" href="#">احجز الآن</a>
+<div class="card best">
+<h3>Lifetime</h3>
+<div class="price">35,000 جنيه</div>
+<a class="buy" data-plan="Lifetime">اشترى الآن <span class="count">10</span></a>
 </div>
 `;
-
-contactBox.innerHTML = `
-🇪🇬 مصر<br>
-+20 109 682 4653<br>
-📧 Ahmed.Stack.Dev@gmail.com
-`;
-
 setLinks("201096824653");
 
-}
-
-// 🌍 دولي
-else{
-
-pricingBox.innerHTML = `
-
-<div class="price-card">
-<h3>Starter</h3>
-<div class="old">$59</div>
-<div class="price">$39 / month</div>
-<p>Call Tracking</p>
-<a class="buy" href="#">Start Now</a>
+}else{
+box.innerHTML=`
+<div class="card">
+<h3>Monthly</h3>
+<div class="price">$39</div>
+<a class="buy" data-plan="Monthly">Buy <span class="count">10</span></a>
 </div>
 
-<div class="price-card best">
-<div class="badge">Best Seller</div>
-<h3>Pro</h3>
-<div class="old">$129</div>
-<div class="price">$89 / month</div>
-<p>Auto Leads + AI</p>
-<a class="buy" href="#">Start Now</a>
-</div>
-
-<div class="price-card">
-<h3>Enterprise</h3>
-<div class="old">$299</div>
-<div class="price">$199+</div>
-<p>Full Features</p>
-<a class="buy" href="#">Book Demo</a>
+<div class="card best">
+<h3>Lifetime</h3>
+<div class="price">$2000</div>
+<a class="buy" data-plan="Lifetime">Buy <span class="count">10</span></a>
 </div>
 `;
-
-contactBox.innerHTML = `
-🌍 International<br>
-+966 56 524 5950<br>
-📧 Ahmed.Stack.Dev@gmail.com
-`;
-
 setLinks("966565245950");
-
 }
 
+initBuyButtons();
 }
 
-// LINKS
+// WHATSAPP
 function setLinks(num){
-let url = "https://wa.me/" + num;
+window.phone=num;
+document.getElementById("heroBtn").href="https://wa.me/"+num;
+}
 
-document.getElementById("whatsappBtn").href = url;
-document.getElementById("whatsappFloat").href = url;
-document.getElementById("heroBtn").href = url;
-
-// ربط زرار الشراء
+// BUY BUTTON
+function initBuyButtons(){
 document.querySelectorAll(".buy").forEach(btn=>{
-btn.href = url;
+
+let count=10;
+
+let interval=setInterval(()=>{
+count--;
+btn.querySelector(".count").innerText=count;
+if(count<=0)clearInterval(interval);
+},1000);
+
+btn.onclick=()=>{
+let plan=btn.dataset.plan;
+let msg=encodeURIComponent("عايز أشتري خطة "+plan);
+window.open("https://wa.me/"+window.phone+"?text="+msg);
+};
 });
 }
 
-// TIMER
-let end = localStorage.getItem("offerEnd");
+// TIMER FAKE DATA
+let viewers=12;
+setInterval(()=>{
+viewers+=Math.floor(Math.random()*3-1);
+if(viewers<5)viewers=5;
+document.getElementById("viewers").innerText=viewers;
+},3000);
 
-if(!end){
-end = Date.now() + 86400000;
-localStorage.setItem("offerEnd", end);
+let orders=5;
+setInterval(()=>{
+if(Math.random()>0.7)orders++;
+document.getElementById("orders").innerText=orders;
+},4000);
+
+let slots=3;
+setInterval(()=>{
+if(slots>1 && Math.random()>0.8){
+slots--;
+document.getElementById("slots").innerText=slots;
 }
+},8000);
+
+// NOTIFICATIONS
+const msgs=[
+"🔥 عميل اشترى الآن",
+"💰 طلب جديد",
+"🚀 شركة بدأت النظام",
+"📞 اشتراك جديد"
+];
 
 setInterval(()=>{
-let diff = end - Date.now();
+let box=document.getElementById("notify");
+box.innerText=msgs[Math.floor(Math.random()*msgs.length)];
+box.style.display="block";
+setTimeout(()=>box.style.display="none",3000);
+},6000);
 
-if(diff <= 0){
-document.getElementById("timer").innerHTML = "انتهى العرض";
-return;
+// POPUP FIRST VISIT
+if(!localStorage.getItem("visited")){
+setTimeout(()=>{
+document.getElementById("popup").style.display="flex";
+localStorage.setItem("visited",true);
+},2000);
 }
 
-let h = Math.floor(diff/3600000);
-let m = Math.floor((diff%3600000)/60000);
-let s = Math.floor((diff%60000)/1000);
-
-document.getElementById("timer").innerHTML =
-h+"h : "+m+"m : "+s+"s";
-
-},1000);
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
 
 </script>
 
