@@ -65,7 +65,7 @@
 
 ## 🧪 جرّبه بنفسك
 
-👉 شوف النظام شغال + السعر حسب بلدك:
+👉 شوف النظام شغال :
 
 🔗 https://AhmedStackDev.github.io/callflow-3cx-odoo-ai/
 
