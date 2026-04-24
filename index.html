@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Odoo + 3CX Smart Call Intelligence</title>
 
 <style>
-
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#0b1220;
 color:white;
 line-height:1.6;
@@ -26,12 +24,12 @@ display:inline-block;
 /* HERO */
 .hero{
 text-align:center;
-padding:100px 20px;
+padding:120px 20px;
 background:linear-gradient(135deg,#2563eb,#1e40af);
 }
 
-h1{font-size:38px;margin-bottom:10px;}
-p{font-size:18px;opacity:.9}
+h1{font-size:42px;margin-bottom:10px;}
+p{font-size:18px;opacity:.9;}
 
 /* BUTTONS */
 .btn{
@@ -44,12 +42,12 @@ font-weight:bold;
 transition:.3s;
 }
 
-.btn:hover{transform:scale(1.07)}
+.btn:hover{transform:scale(1.05)}
 
 .green{background:#25D366;color:white}
 .blue{background:#3b82f6;color:white}
 
-/* SECTION */
+/* SECTIONS */
 section{
 padding:60px 20px;
 max-width:1000px;
@@ -72,7 +70,7 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
-/* PRICING CARD */
+/* PRICING */
 .price-card{
 background:#111827;
 padding:25px;
@@ -87,11 +85,20 @@ transform:translateY(-5px);
 border-color:#25D366;
 }
 
+.best{
+border:2px solid #25D366;
+}
+
 .price{
 font-size:24px;
 color:#25D366;
 font-weight:bold;
 margin:10px 0;
+}
+
+.note{
+font-size:14px;
+color:#25D366;
 }
 
 .badge{
@@ -100,8 +107,8 @@ color:black;
 padding:5px 10px;
 border-radius:8px;
 font-size:12px;
-margin-bottom:10px;
 display:inline-block;
+margin-bottom:10px;
 }
 
 /* OFFER */
@@ -128,17 +135,16 @@ left:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
-font-size:20px;
+font-size:22px;
 text-decoration:none;
-box-shadow:0 0 10px rgba(0,0,0,.3);
+color:white;
+box-shadow:0 0 10px rgba(0,0,0,.4);
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
 <h1>📞 حوّل كل مكالمة إلى عميل</h1>
 <p>نظام ذكي يحوّل مكالماتك إلى مبيعات داخل Odoo تلقائيًا</p>
@@ -147,7 +153,6 @@ box-shadow:0 0 10px rgba(0,0,0,.3);
 <a class="btn blue" href="#pricing">💰 عرض الأسعار</a>
 </div>
 
-<!-- PROBLEM -->
 <section>
 <h2>💥 المشكلة</h2>
 <div class="card">
@@ -159,7 +164,6 @@ box-shadow:0 0 10px rgba(0,0,0,.3);
 </div>
 </section>
 
-<!-- SOLUTION -->
 <section>
 <h2>💡 الحل</h2>
 <div class="card">
@@ -171,74 +175,67 @@ box-shadow:0 0 10px rgba(0,0,0,.3);
 </div>
 </section>
 
-<!-- PRICING -->
 <section id="pricing">
 <h2>💰 الأسعار</h2>
-<div class="grid" id="pricingBox">جارى تحميل الأسعار...</div>
+<div class="grid" id="pricingBox"></div>
 </section>
 
-<!-- CONTACT -->
 <section>
 <h2>📞 تواصل</h2>
-<div class="card" id="contactBox">جارى التحميل...</div>
+<div class="card" id="contactBox"></div>
 <a class="btn green" id="whatsappBtn" target="_blank">💬 واتساب</a>
 </section>
 
-<!-- OFFER -->
 <div class="offer">
 🔥 خصم لفترة محدودة ينتهي خلال:<br><br>
 <span id="timer" style="font-size:24px;font-weight:bold;"></span>
 </div>
 
-<footer>
-💰 Turn Calls Into Revenue
-</footer>
+<footer>Turn Calls Into Revenue 💰</footer>
 
 <a id="whatsappFloat">💬</a>
 
 <script>
 
-// DEFAULT
-let country = "EG";
+// 🔥 DEFAULT سريع
+let country = "INTL";
+render("INTL");
 
-// FAST LOAD
-applyContent();
-
-// GET COUNTRY
+// 🔥 API (لو اشتغل يحدث الصفحة)
 fetch("https://ipapi.co/json/")
 .then(res => res.json())
 .then(data => {
-country = data.country || "EG";
-applyContent();
-});
+if(data && data.country){
+country = data.country;
+render(country);
+}
+})
+.catch(()=>{});
 
-// APPLY
-function applyContent(){
+// 🎯 RENDER
+function render(c){
 
 let pricingBox = document.getElementById("pricingBox");
 let contactBox = document.getElementById("contactBox");
 
-// EGYPT
-if(country === "EG"){
+if(c === "EG"){
 
 pricingBox.innerHTML = `
 <div class="price-card">
 <h3>Starter</h3>
-<div class="price">900 جنيه / شهر</div>
-<p>Call Tracking + Logs</p>
+<div class="price">1200 جنيه / شهر</div>
+<p class="note">🔥 Local pricing</p>
 </div>
 
-<div class="price-card">
+<div class="price-card best">
 <div class="badge">الأكثر مبيعًا</div>
 <h3>Pro</h3>
-<div class="price">1900 جنيه / شهر</div>
-<p>Auto Leads + Dashboard</p>
+<div class="price">2500 جنيه / شهر</div>
 </div>
 
 <div class="price-card">
 <h3>Enterprise</h3>
-<div class="price">4000 جنيه+</div>
-<p>كل المميزات + دعم كامل</p>
+<div class="price">5000+ جنيه</div>
 </div>
 `;
 
@@ -250,34 +247,28 @@ contactBox.innerHTML = `
 
 setLinks("201096824653");
 
-}
-
-// GLOBAL
-else{
+} else {
 
 pricingBox.innerHTML = `
 <div class="price-card">
 <h3>Starter</h3>
 <div class="price">$39 / month</div>
-<p>Call Tracking</p>
 </div>
 
-<div class="price-card">
+<div class="price-card best">
 <div class="badge">Best Seller</div>
 <h3>Pro</h3>
 <div class="price">$89 / month</div>
-<p>Auto Leads + AI Matching</p>
 </div>
 
 <div class="price-card">
 <h3>Enterprise</h3>
 <div class="price">$199+</div>
-<p>Full Features + API</p>
 </div>
 `;
 
 contactBox.innerHTML = `
-🌍 Gulf / International<br>
+🌍 International<br>
 <span class="ltr">+966 56 524 5950</span><br>
 📧 <span class="ltr">odoo.dev2015@gmail.com</span>
 `;
@@ -288,35 +279,33 @@ setLinks("966565245950");
 
 }
 
-// LINKS
+// 🔗 LINKS
 function setLinks(num){
 let url = "https://wa.me/" + num;
-
 document.getElementById("whatsappBtn").href = url;
 document.getElementById("whatsappFloat").href = url;
 document.getElementById("heroBtn").href = url;
 }
 
-// TIMER
+// ⏳ TIMER
 let end = localStorage.getItem("offerEnd");
 
 if(!end){
-end = new Date().getTime() + 86400000;
+end = Date.now() + 86400000;
 localStorage.setItem("offerEnd", end);
 }
 
 setInterval(()=>{
-let now = new Date().getTime();
-let diff = end - now;
+let diff = end - Date.now();
 
 if(diff <= 0){
 document.getElementById("timer").innerHTML = "انتهى العرض";
 return;
 }
 
-let h = Math.floor(diff/(1000*60*60));
-let m = Math.floor((diff%(1000*60*60))/(1000*60));
-let s = Math.floor((diff%(1000*60))/1000);
+let h = Math.floor(diff/3600000);
+let m = Math.floor((diff%3600000)/60000);
+let s = Math.floor((diff%60000)/1000);
 
 document.getElementById("timer").innerHTML =
 h+"h : "+m+"m : "+s+"s";
