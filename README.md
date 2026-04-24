@@ -1,141 +1,195 @@
 # 📞 Odoo + 3CX Smart Call Intelligence
 
-> 🔥 **Limited Offer:** Get Setup + Live Demo Today via WhatsApp
-
-🚀 **Turn Every Call Into Revenue**
-
-A powerful integration between **Odoo CRM** and **3CX Phone System** that automatically converts calls into customers, leads, and real-time sales insights.
+> 🚀 حوّل كل مكالمة إلى فلوس… مش مجرد سجل
+> 🔥 عرض محدود: احصل على Setup + Demo مباشر الآن
 
 ---
 
-## 🌐 Live Demo
+## ❌ المشكلة
 
-👉 See the system in action (auto-detects your country & pricing):
+معظم الشركات بتخسر فلوس يوميًا بسبب:
 
-🔗 https://ahmedredaelgoal.github.io/callflow-3cx-odoo-ai/
+* العميل بيكلم… والمكالمة بتتقفل وتتنسي
+* فريق المبيعات مش بيرجع يتابع
+* مفيش ربط بين التليفون و الـ CRM
+* فرص البيع بتضيع بدون ما تحس
 
----
-
-## 🌍 Language
-
-- 🇬🇧 English (Default)
-- 🇸🇦 Arabic 👉 Available inside the live demo page
+👉 **النتيجة = خسارة مباشرة في الأرباح**
 
 ---
 
-## 💥 Problem
+## 💰 الحل
 
-Most companies lose customers because:
+النظام ده بيربط بين:
 
-- Calls are not tracked  
-- No integration between phone system and CRM  
-- Sales opportunities are missed  
+👉 **3CX + Odoo CRM**
 
-👉 **Result: Lost revenue**
+وبيعمل حاجة واحدة بس:
 
----
+> 🔥 يحوّل كل مكالمة إلى فرصة بيع حقيقية
 
-## 💡 Solution
-
-This system connects **3CX + Odoo** and converts every call into:
-
-- 👤 Customer  
-- 💰 Lead  
-- 📋 Call Log  
-- 📊 Sales Analytics  
+بشكل تلقائي 100% بدون تدخل منك
 
 ---
 
-## ⚡ Features
+## 🎯 ماذا يحدث عند كل مكالمة؟
 
-- 📡 Real-time call tracking  
-- 🧠 Smart caller identification  
-- 💰 Automatic lead creation  
-- 📊 Sales dashboard  
-- ⚡ Click-to-Call inside Odoo  
-- 🔌 Plug & Play setup  
-- 🔔 Real-time notifications  
+📞 المكالمة → تتحول Lead
+👤 العميل → يتسجل تلقائي
+📋 Call Log → يتسجل
+📊 البيانات → تتحلل في Dashboard
 
----
+### النتيجة:
 
-## 🚀 Installation
-
-1. Install the module in Odoo  
-2. Enter API Key  
-3. Connect 3CX  
-4. Start receiving calls instantly  
+✔ مفيش مكالمة بتضيع
+✔ كل عميل بيتتابع
+✔ فريق المبيعات شغال صح
+✔ الأرباح بتزيد
 
 ---
 
-## 💰 Pricing
+## ⚡ ليه النظام ده مختلف؟
 
-👉 Pricing depends on your country  
-👉 View dynamic pricing here:
+ده مش مجرد Integration 👇
 
-🔗 https://ahmedredaelgoal.github.io/callflow-3cx-odoo-ai/
+👉 ده **نظام بيع كامل**
 
----
-
-## 🧠 Architecture
-
-- Secure API endpoint `/api/3cx/call`  
-- Call normalization & smart matching  
-- Auto lead & partner creation  
-- Multi-company support  
-- Real-time notifications  
-- Analytics dashboard  
+* 🧠 Smart Matching (تعرف العميل تلقائي)
+* 💰 Auto Lead Creation
+* 📊 Dashboard احترافي
+* ⚡ Click-to-Call داخل Odoo
+* 🔌 Plug & Play (تشغيل خلال دقائق)
+* 🔔 إشعارات فورية
 
 ---
 
-## 🔐 Security
+## 🧪 جرّبه بنفسك
 
-- API Key authentication  
-- IP Whitelist  
-- Rate limiting  
-- Idempotency protection  
-- Full audit logging  
+👉 شوف النظام شغال + السعر حسب بلدك:
+
+🔗 https://AhmedStackDev.github.io/callflow-3cx-odoo-ai/
 
 ---
 
-## 💰 Business Value
+## 💸 التسعير
 
-📞 **Every missed call = lost money**
+💡 السعر مش ثابت
+👉 بيتحدد تلقائي حسب بلدك
 
-This system ensures that never happens again.
-
----
-
-## 💬 Contact
-
-🚀 Ready to increase your sales?
-
-### 👉 WhatsApp
-
-[![WhatsApp Egypt](https://img.shields.io/badge/WhatsApp-Egypt-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/201096824653?text=Hi%20I%20want%20a%20demo%20of%20Odoo%203CX%20Smart%20Call%20Intelligence)
-
-[![WhatsApp Gulf](https://img.shields.io/badge/WhatsApp-Gulf%20%2F%20International-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/966565245950?text=Hi%20I%20want%20a%20demo%20of%20Odoo%203CX%20Smart%20Call%20Intelligence)
+✔ بدون تعقيد
+✔ بدون اختيار يدوي
 
 ---
 
-### 📧 Email
+## ⚠️ الحقيقة
 
-odoo.dev2015@gmail.com
+📞 كل مكالمة ضايعة = عميل ضايع
+💰 كل عميل ضايع = فلوس ضايعة
 
----
-
-## ⭐ Support
-
-If this project helps you, please ⭐ star the repository.
+👉 والنظام ده معمول عشان يمنع ده تمامًا
 
 ---
 
-## 📄 License
+## ⏱️ Setup سريع جدًا
+
+1. تثبيت الموديول
+2. إضافة API Key
+3. ربط 3CX
+4. Done ✅
+
+🚀 خلال دقائق النظام شغال
+
+---
+
+## 🧠 الهيكل التقني (Architecture)
+
+* Endpoint: `/api/3cx/call`
+* معالجة المكالمات Incoming / Outgoing
+* إنشاء Leads تلقائي
+* دعم Multi-Company
+* Dashboard تحليلي
+* إشعارات لحظية
+
+---
+
+## 🔐 الأمان
+
+* API Key Authentication
+* IP Whitelist
+* Rate Limiting
+* Idempotency Protection
+* Audit Logs
+
+---
+
+## 📈 قبل / بعد
+
+### ❌ قبل
+
+* مكالمات بتضيع
+* مفيش Tracking
+* Leads مفقودة
+* شغل يدوي
+
+### ✅ بعد
+
+* كل مكالمة مسجلة
+* Leads تلقائي
+* CRM محدث لحظيًا
+* رؤية كاملة للمبيعات
+
+---
+
+## 💬 ابدأ الآن
+
+🚀 عايز تزود مبيعاتك فعلاً؟
+
+👉 اضغط هنا:
+
+🔗 https://AhmedStackDev.github.io/callflow-3cx-odoo-ai/
+
+---
+
+## 📞 تواصل مباشر
+
+### 🇪🇬 مصر
+
++20 109 682 4653
+
+### 🌍 الخليج / دولي
+
++966 56 524 5950
+
+📧 [Ahmed.Stack.Dev@gmail.com](mailto:Ahmed.Stack.Dev@gmail.com)
+
+---
+
+## ⭐ الدعم
+
+لو المشروع عجبك:
+
+👉 اعمله **Star ⭐**
+
+---
+
+## 📄 الترخيص
 
 MIT License
 
 ---
 
-## 🚀 Final Message
+## 🚀 الرسالة النهائية
 
-💰 This is not just an integration  
-📞 This is a **sales machine**
+💰 ده مش Plugin
+💰 مش Integration
+
+👉 ده **نظام بيحوّل المكالمات لفلوس**
+
+---
+
+> ⚡ القرار بسيط:
+>
+> ❌ تكمّل وتخسر عملاء
+> ✅ تبدأ وتزود مبيعاتك
+
+🔥 ابدأ الآن قبل ما تضيع فرص أكتر
