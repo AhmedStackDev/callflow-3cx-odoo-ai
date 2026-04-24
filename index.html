@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +13,24 @@ margin:0;
 font-family:Arial, sans-serif;
 background:#0b1220;
 color:white;
+line-height:1.6;
+}
+
+/* FIX NUMBERS */
+.ltr{
+direction:ltr;
+unicode-bidi:isolate;
+display:inline-block;
 }
 
 /* HERO */
 .hero{
 text-align:center;
-padding:110px 20px;
+padding:100px 20px;
 background:linear-gradient(135deg,#2563eb,#1e40af);
 }
 
-h1{font-size:44px;margin-bottom:10px;}
+h1{font-size:38px;margin-bottom:10px;}
 p{font-size:18px;opacity:.9}
 
 /* BUTTONS */
@@ -41,44 +49,59 @@ transition:.3s;
 .green{background:#25D366;color:white}
 .blue{background:#3b82f6;color:white}
 
-/* SECTIONS */
+/* SECTION */
 section{
-padding:70px 20px;
+padding:60px 20px;
 max-width:1000px;
 margin:auto;
 }
 
+/* CARD */
 .card{
 background:#111827;
-padding:25px;
-border-radius:16px;
+padding:20px;
+border-radius:14px;
 margin:15px 0;
 border:1px solid #1f2937;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
-/* PRICING */
+/* PRICING CARD */
+.price-card{
+background:#111827;
+padding:25px;
+border-radius:16px;
+border:1px solid #1f2937;
+text-align:center;
+transition:.3s;
+}
+
+.price-card:hover{
+transform:translateY(-5px);
+border-color:#25D366;
+}
+
 .price{
-font-size:26px;
+font-size:24px;
 color:#25D366;
 font-weight:bold;
 margin:10px 0;
 }
 
-.best{
-border:2px solid #25D366;
+.badge{
+background:#25D366;
+color:black;
+padding:5px 10px;
+border-radius:8px;
+font-size:12px;
+margin-bottom:10px;
+display:inline-block;
 }
 
 /* OFFER */
@@ -88,7 +111,6 @@ background:#dc2626;
 padding:20px;
 margin:40px;
 border-radius:12px;
-font-size:18px;
 }
 
 /* FOOTER */
@@ -98,7 +120,7 @@ padding:30px;
 opacity:.7;
 }
 
-/* FLOAT */
+/* FLOAT BTN */
 #whatsappFloat{
 position:fixed;
 bottom:20px;
@@ -106,9 +128,9 @@ left:20px;
 background:#25D366;
 padding:15px;
 border-radius:50%;
-font-size:22px;
+font-size:20px;
 text-decoration:none;
-color:white;
+box-shadow:0 0 10px rgba(0,0,0,.3);
 }
 
 </style>
@@ -118,145 +140,146 @@ color:white;
 
 <!-- HERO -->
 <div class="hero">
-<h1>📞 Turn Every Call Into Revenue</h1>
-<p>Odoo + 3CX Smart Call Intelligence</p>
+<h1>📞 حوّل كل مكالمة إلى عميل</h1>
+<p>نظام ذكي يحوّل مكالماتك إلى مبيعات داخل Odoo تلقائيًا</p>
 
-<a class="btn green" id="heroBtn" target="_blank">💬 Start Demo</a>
-<a class="btn blue" href="#pricing">💰 View Pricing</a>
+<a class="btn green" id="heroBtn" target="_blank">💬 جرّب الآن</a>
+<a class="btn blue" href="#pricing">💰 عرض الأسعار</a>
 </div>
 
 <!-- PROBLEM -->
 <section>
-<h2>💥 Problem</h2>
+<h2>💥 المشكلة</h2>
 <div class="card">
 <ul>
-<li>Calls are not tracked</li>
-<li>No CRM integration</li>
-<li>Lost sales opportunities</li>
+<li>مكالمات غير مسجلة</li>
+<li>عدم ربط CRM</li>
+<li>ضياع فرص البيع</li>
 </ul>
 </div>
 </section>
 
 <!-- SOLUTION -->
 <section>
-<h2>💡 Solution</h2>
+<h2>💡 الحل</h2>
 <div class="card">
-Connect 3CX with Odoo and convert every call into:
 <ul>
-<li>👤 Customer</li>
-<li>💰 Lead</li>
-<li>📊 Sales Analytics</li>
+<li>👤 عميل</li>
+<li>💰 فرصة بيع</li>
+<li>📊 تحليل فوري</li>
 </ul>
-</div>
-</section>
-
-<!-- FEATURES -->
-<section>
-<h2>⚡ Features</h2>
-<div class="grid">
-<div class="card">📡 Real-time tracking</div>
-<div class="card">🧠 Smart caller ID</div>
-<div class="card">💰 Auto Leads</div>
-<div class="card">📊 Dashboard</div>
-<div class="card">⚡ Click-to-Call</div>
-<div class="card">🔔 Notifications</div>
 </div>
 </section>
 
 <!-- PRICING -->
 <section id="pricing">
-<h2>💰 Pricing</h2>
-<div class="grid" id="pricingBox">
-Loading pricing...
-</div>
+<h2>💰 الأسعار</h2>
+<div class="grid" id="pricingBox">جارى تحميل الأسعار...</div>
 </section>
 
 <!-- CONTACT -->
 <section>
-<h2>📞 Contact</h2>
-<div class="card" id="contactBox"></div>
-<a class="btn green" id="whatsappBtn" target="_blank">💬 WhatsApp</a>
+<h2>📞 تواصل</h2>
+<div class="card" id="contactBox">جارى التحميل...</div>
+<a class="btn green" id="whatsappBtn" target="_blank">💬 واتساب</a>
 </section>
 
 <!-- OFFER -->
 <div class="offer">
-🔥 Limited Offer ends in:<br><br>
-<span id="timer" style="font-size:26px;font-weight:bold;"></span>
+🔥 خصم لفترة محدودة ينتهي خلال:<br><br>
+<span id="timer" style="font-size:24px;font-weight:bold;"></span>
 </div>
 
 <footer>
-Turn Calls Into Revenue 💰
+💰 Turn Calls Into Revenue
 </footer>
 
 <a id="whatsappFloat">💬</a>
 
 <script>
 
+// DEFAULT
 let country = "EG";
 
+// FAST LOAD
+applyContent();
+
+// GET COUNTRY
 fetch("https://ipapi.co/json/")
 .then(res => res.json())
-.then(data => { country = data.country; loadContent(); })
-.catch(() => loadContent());
+.then(data => {
+country = data.country || "EG";
+applyContent();
+});
 
-function loadContent(){
+// APPLY
+function applyContent(){
 
 let pricingBox = document.getElementById("pricingBox");
 let contactBox = document.getElementById("contactBox");
 
+// EGYPT
 if(country === "EG"){
 
 pricingBox.innerHTML = `
-<div class="card">
+<div class="price-card">
 <h3>Starter</h3>
-<div class="price">1200 EGP / month</div>
-<p>Call Tracking</p>
+<div class="price">900 جنيه / شهر</div>
+<p>Call Tracking + Logs</p>
 </div>
 
-<div class="card best">
-<h3>Pro ⭐</h3>
-<div class="price">2500 EGP / month</div>
+<div class="price-card">
+<div class="badge">الأكثر مبيعًا</div>
+<h3>Pro</h3>
+<div class="price">1900 جنيه / شهر</div>
 <p>Auto Leads + Dashboard</p>
 </div>
 
-<div class="card">
+<div class="price-card">
 <h3>Enterprise</h3>
-<div class="price">5000+ EGP</div>
-<p>Full Features</p>
+<div class="price">4000 جنيه+</div>
+<p>كل المميزات + دعم كامل</p>
 </div>
 `;
 
 contactBox.innerHTML = `
-🇪🇬 Egypt<br>
-+20 109 682 4653<br>
-📧 odoo.dev2015@gmail.com
+🇪🇬 مصر<br>
+<span class="ltr">+20 109 682 4653</span><br>
+📧 <span class="ltr">odoo.dev2015@gmail.com</span>
 `;
 
 setLinks("201096824653");
 
-}else{
+}
+
+// GLOBAL
+else{
 
 pricingBox.innerHTML = `
-<div class="card">
+<div class="price-card">
 <h3>Starter</h3>
 <div class="price">$39 / month</div>
+<p>Call Tracking</p>
 </div>
 
-<div class="card best">
-<h3>Pro ⭐</h3>
+<div class="price-card">
+<div class="badge">Best Seller</div>
+<h3>Pro</h3>
 <div class="price">$89 / month</div>
+<p>Auto Leads + AI Matching</p>
 </div>
 
-<div class="card">
+<div class="price-card">
 <h3>Enterprise</h3>
 <div class="price">$199+</div>
+<p>Full Features + API</p>
 </div>
 `;
 
 contactBox.innerHTML = `
-🌍 International<br>
-+966565245950<br>
-📧 odoo.dev2015@gmail.com
+🌍 Gulf / International<br>
+<span class="ltr">+966 56 524 5950</span><br>
+📧 <span class="ltr">odoo.dev2015@gmail.com</span>
 `;
 
 setLinks("966565245950");
@@ -265,8 +288,9 @@ setLinks("966565245950");
 
 }
 
+// LINKS
 function setLinks(num){
-let url = "https://wa.me/" + num + "?text=Hi%20I%20want%20a%20demo";
+let url = "https://wa.me/" + num;
 
 document.getElementById("whatsappBtn").href = url;
 document.getElementById("whatsappFloat").href = url;
@@ -286,7 +310,7 @@ let now = new Date().getTime();
 let diff = end - now;
 
 if(diff <= 0){
-document.getElementById("timer").innerHTML = "Offer expired";
+document.getElementById("timer").innerHTML = "انتهى العرض";
 return;
 }
 
@@ -294,7 +318,8 @@ let h = Math.floor(diff/(1000*60*60));
 let m = Math.floor((diff%(1000*60*60))/(1000*60));
 let s = Math.floor((diff%(1000*60))/1000);
 
-document.getElementById("timer").innerHTML = h+"h : "+m+"m : "+s+"s";
+document.getElementById("timer").innerHTML =
+h+"h : "+m+"m : "+s+"s";
 
 },1000);
 
