@@ -14,13 +14,6 @@ color:white;
 line-height:1.6;
 }
 
-/* FIX NUMBERS */
-.ltr{
-direction:ltr;
-unicode-bidi:isolate;
-display:inline-block;
-}
-
 /* HERO */
 .hero{
 text-align:center;
@@ -31,7 +24,6 @@ background:linear-gradient(135deg,#2563eb,#1e40af);
 h1{font-size:42px;margin-bottom:10px;}
 p{font-size:18px;opacity:.9;}
 
-/* BUTTONS */
 .btn{
 display:inline-block;
 padding:14px 28px;
@@ -41,7 +33,6 @@ text-decoration:none;
 font-weight:bold;
 transition:.3s;
 }
-
 .btn:hover{transform:scale(1.05)}
 
 .green{background:#25D366;color:white}
@@ -78,37 +69,57 @@ border-radius:16px;
 border:1px solid #1f2937;
 text-align:center;
 transition:.3s;
+position:relative;
 }
 
 .price-card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 border-color:#25D366;
 }
 
+/* BEST PLAN */
 .best{
 border:2px solid #25D366;
+transform:scale(1.05);
 }
 
+.badge{
+position:absolute;
+top:-10px;
+right:10px;
+background:#25D366;
+color:black;
+padding:6px 10px;
+border-radius:8px;
+font-size:12px;
+font-weight:bold;
+}
+
+/* PRICE */
 .price{
-font-size:24px;
+font-size:26px;
 color:#25D366;
 font-weight:bold;
 margin:10px 0;
 }
 
-.note{
+/* OLD PRICE */
+.old{
+text-decoration:line-through;
+opacity:.5;
 font-size:14px;
-color:#25D366;
 }
 
-.badge{
+/* CTA */
+.buy{
+display:block;
+margin-top:15px;
+padding:12px;
+border-radius:10px;
 background:#25D366;
 color:black;
-padding:5px 10px;
-border-radius:8px;
-font-size:12px;
-display:inline-block;
-margin-bottom:10px;
+font-weight:bold;
+text-decoration:none;
 }
 
 /* OFFER */
@@ -145,49 +156,55 @@ box-shadow:0 0 10px rgba(0,0,0,.4);
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
 <h1>📞 حوّل كل مكالمة إلى عميل</h1>
-<p>نظام ذكي يحوّل مكالماتك إلى مبيعات داخل Odoo تلقائيًا</p>
+<p>كل مكالمة = فرصة بيع… متخليش ولا واحدة تضيع</p>
 
-<a class="btn green" id="heroBtn" target="_blank">💬 جرّب الآن</a>
-<a class="btn blue" href="#pricing">💰 عرض الأسعار</a>
+<a class="btn green" id="heroBtn" target="_blank">🚀 ابدأ الآن</a>
+<a class="btn blue" href="#pricing">💰 شوف السعر</a>
 </div>
 
+<!-- PROBLEM -->
 <section>
 <h2>💥 المشكلة</h2>
 <div class="card">
 <ul>
-<li>مكالمات غير مسجلة</li>
-<li>عدم ربط CRM</li>
-<li>ضياع فرص البيع</li>
+<li>مكالمات بتضيع بدون تسجيل</li>
+<li>مفيش ربط بين 3CX و CRM</li>
+<li>مبيعات بتضيع كل يوم</li>
 </ul>
 </div>
 </section>
 
+<!-- SOLUTION -->
 <section>
 <h2>💡 الحل</h2>
 <div class="card">
 <ul>
-<li>👤 عميل</li>
-<li>💰 فرصة بيع</li>
-<li>📊 تحليل فوري</li>
+<li>📞 تسجيل كل مكالمة تلقائي</li>
+<li>👤 إنشاء عميل أو Lead فورًا</li>
+<li>📊 تحليل مبيعات لحظي</li>
 </ul>
 </div>
 </section>
 
+<!-- PRICING -->
 <section id="pricing">
-<h2>💰 الأسعار</h2>
+<h2>💰 اختر الخطة المناسبة</h2>
 <div class="grid" id="pricingBox"></div>
 </section>
 
+<!-- CONTACT -->
 <section>
-<h2>📞 تواصل</h2>
+<h2>📞 تواصل الآن</h2>
 <div class="card" id="contactBox"></div>
 <a class="btn green" id="whatsappBtn" target="_blank">💬 واتساب</a>
 </section>
 
+<!-- OFFER -->
 <div class="offer">
-🔥 خصم لفترة محدودة ينتهي خلال:<br><br>
+🔥 عرض خاص ينتهي خلال:<br><br>
 <span id="timer" style="font-size:24px;font-weight:bold;"></span>
 </div>
 
@@ -197,80 +214,101 @@ box-shadow:0 0 10px rgba(0,0,0,.4);
 
 <script>
 
-// 🔥 DEFAULT سريع
-let country = "INTL";
+// DEFAULT سريع
 render("INTL");
 
-// 🔥 API (لو اشتغل يحدث الصفحة)
+// API
 fetch("https://ipapi.co/json/")
 .then(res => res.json())
 .then(data => {
 if(data && data.country){
-country = data.country;
-render(country);
+render(data.country);
 }
 })
 .catch(()=>{});
 
-// 🎯 RENDER
+// RENDER
 function render(c){
 
 let pricingBox = document.getElementById("pricingBox");
 let contactBox = document.getElementById("contactBox");
 
+// 🇪🇬 مصر
 if(c === "EG"){
 
 pricingBox.innerHTML = `
+
 <div class="price-card">
 <h3>Starter</h3>
+<div class="old">1600 جنيه</div>
 <div class="price">1200 جنيه / شهر</div>
-<p class="note">🔥 Local pricing</p>
+<p>تتبع مكالمات</p>
+<a class="buy" href="#">ابدأ الآن</a>
 </div>
 
 <div class="price-card best">
 <div class="badge">الأكثر مبيعًا</div>
 <h3>Pro</h3>
+<div class="old">3200 جنيه</div>
 <div class="price">2500 جنيه / شهر</div>
+<p>Leads + Dashboard</p>
+<a class="buy" href="#">ابدأ الآن</a>
 </div>
 
 <div class="price-card">
 <h3>Enterprise</h3>
+<div class="old">7000 جنيه</div>
 <div class="price">5000+ جنيه</div>
+<p>كل المميزات + دعم كامل</p>
+<a class="buy" href="#">احجز الآن</a>
 </div>
 `;
 
 contactBox.innerHTML = `
 🇪🇬 مصر<br>
-<span class="ltr">+20 109 682 4653</span><br>
-📧 <span class="ltr">odoo.dev2015@gmail.com</span>
++20 109 682 4653<br>
+📧 Ahmed.Stack.Dev@gmail.com
 `;
 
 setLinks("201096824653");
 
-} else {
+}
+
+// 🌍 دولي
+else{
 
 pricingBox.innerHTML = `
+
 <div class="price-card">
 <h3>Starter</h3>
+<div class="old">$59</div>
 <div class="price">$39 / month</div>
+<p>Call Tracking</p>
+<a class="buy" href="#">Start Now</a>
 </div>
 
 <div class="price-card best">
 <div class="badge">Best Seller</div>
 <h3>Pro</h3>
+<div class="old">$129</div>
 <div class="price">$89 / month</div>
+<p>Auto Leads + AI</p>
+<a class="buy" href="#">Start Now</a>
 </div>
 
 <div class="price-card">
 <h3>Enterprise</h3>
+<div class="old">$299</div>
 <div class="price">$199+</div>
+<p>Full Features</p>
+<a class="buy" href="#">Book Demo</a>
 </div>
 `;
 
 contactBox.innerHTML = `
 🌍 International<br>
-<span class="ltr">+966 56 524 5950</span><br>
-📧 <span class="ltr">odoo.dev2015@gmail.com</span>
++966 56 524 5950<br>
+📧 Ahmed.Stack.Dev@gmail.com
 `;
 
 setLinks("966565245950");
@@ -279,15 +317,21 @@ setLinks("966565245950");
 
 }
 
-// 🔗 LINKS
+// LINKS
 function setLinks(num){
 let url = "https://wa.me/" + num;
+
 document.getElementById("whatsappBtn").href = url;
 document.getElementById("whatsappFloat").href = url;
 document.getElementById("heroBtn").href = url;
+
+// ربط زرار الشراء
+document.querySelectorAll(".buy").forEach(btn=>{
+btn.href = url;
+});
 }
 
-// ⏳ TIMER
+// TIMER
 let end = localStorage.getItem("offerEnd");
 
 if(!end){
