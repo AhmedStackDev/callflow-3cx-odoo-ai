@@ -15,15 +15,17 @@ background:#0b1220;
 color:white;
 }
 
+/* HERO */
 .hero{
 text-align:center;
-padding:100px 20px;
+padding:110px 20px;
 background:linear-gradient(135deg,#2563eb,#1e40af);
 }
 
-h1{font-size:42px;}
-p{font-size:18px;opacity:.9;}
+h1{font-size:44px;margin-bottom:10px;}
+p{font-size:18px;opacity:.9}
 
+/* BUTTONS */
 .btn{
 display:inline-block;
 padding:14px 28px;
@@ -33,49 +35,80 @@ text-decoration:none;
 font-weight:bold;
 transition:.3s;
 }
-.btn:hover{transform:scale(1.05)}
+
+.btn:hover{transform:scale(1.07)}
 
 .green{background:#25D366;color:white}
 .blue{background:#3b82f6;color:white}
 
+/* SECTIONS */
 section{
-padding:60px 20px;
+padding:70px 20px;
 max-width:1000px;
 margin:auto;
 }
 
 .card{
 background:#111827;
-padding:20px;
-border-radius:14px;
+padding:25px;
+border-radius:16px;
 margin:15px 0;
 border:1px solid #1f2937;
+transition:.3s;
 }
 
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+gap:20px;
 }
 
+/* PRICING */
 .price{
-font-size:22px;
+font-size:26px;
 color:#25D366;
 font-weight:bold;
+margin:10px 0;
 }
 
+.best{
+border:2px solid #25D366;
+}
+
+/* OFFER */
 .offer{
 text-align:center;
 background:#dc2626;
 padding:20px;
 margin:40px;
 border-radius:12px;
+font-size:18px;
 }
 
+/* FOOTER */
 footer{
 text-align:center;
 padding:30px;
 opacity:.7;
+}
+
+/* FLOAT */
+#whatsappFloat{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+color:white;
 }
 
 </style>
@@ -83,14 +116,16 @@ opacity:.7;
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
 <h1>📞 Turn Every Call Into Revenue</h1>
-<p>Odoo + 3CX Smart Call Intelligence System</p>
+<p>Odoo + 3CX Smart Call Intelligence</p>
 
-<a class="btn green" id="heroBtn" target="_blank">💬 Get Demo</a>
-<a class="btn blue" href="#pricing">💰 Pricing</a>
+<a class="btn green" id="heroBtn" target="_blank">💬 Start Demo</a>
+<a class="btn blue" href="#pricing">💰 View Pricing</a>
 </div>
 
+<!-- PROBLEM -->
 <section>
 <h2>💥 Problem</h2>
 <div class="card">
@@ -102,6 +137,7 @@ opacity:.7;
 </div>
 </section>
 
+<!-- SOLUTION -->
 <section>
 <h2>💡 Solution</h2>
 <div class="card">
@@ -114,34 +150,45 @@ Connect 3CX with Odoo and convert every call into:
 </div>
 </section>
 
+<!-- FEATURES -->
+<section>
+<h2>⚡ Features</h2>
+<div class="grid">
+<div class="card">📡 Real-time tracking</div>
+<div class="card">🧠 Smart caller ID</div>
+<div class="card">💰 Auto Leads</div>
+<div class="card">📊 Dashboard</div>
+<div class="card">⚡ Click-to-Call</div>
+<div class="card">🔔 Notifications</div>
+</div>
+</section>
+
+<!-- PRICING -->
 <section id="pricing">
 <h2>💰 Pricing</h2>
-
 <div class="grid" id="pricingBox">
 Loading pricing...
 </div>
-
 </section>
 
+<!-- CONTACT -->
 <section>
 <h2>📞 Contact</h2>
 <div class="card" id="contactBox"></div>
 <a class="btn green" id="whatsappBtn" target="_blank">💬 WhatsApp</a>
 </section>
 
+<!-- OFFER -->
 <div class="offer">
 🔥 Limited Offer ends in:<br><br>
-<span id="timer" style="font-size:24px;font-weight:bold;"></span>
+<span id="timer" style="font-size:26px;font-weight:bold;"></span>
 </div>
 
 <footer>
 Turn Calls Into Revenue 💰
 </footer>
 
-<a id="whatsappFloat"
-style="position:fixed;bottom:20px;left:20px;background:#25D366;padding:15px;border-radius:50%;">
-💬
-</a>
+<a id="whatsappFloat">💬</a>
 
 <script>
 
@@ -163,22 +210,25 @@ pricingBox.innerHTML = `
 <div class="card">
 <h3>Starter</h3>
 <div class="price">1200 EGP / month</div>
+<p>Call Tracking</p>
 </div>
 
-<div class="card">
-<h3>Pro</h3>
+<div class="card best">
+<h3>Pro ⭐</h3>
 <div class="price">2500 EGP / month</div>
+<p>Auto Leads + Dashboard</p>
 </div>
 
 <div class="card">
 <h3>Enterprise</h3>
 <div class="price">5000+ EGP</div>
+<p>Full Features</p>
 </div>
 `;
 
 contactBox.innerHTML = `
 🇪🇬 Egypt<br>
-<span style="direction:ltr;">+20 109 682 4653</span><br>
++20 109 682 4653<br>
 📧 odoo.dev2015@gmail.com
 `;
 
@@ -192,8 +242,8 @@ pricingBox.innerHTML = `
 <div class="price">$39 / month</div>
 </div>
 
-<div class="card">
-<h3>Pro</h3>
+<div class="card best">
+<h3>Pro ⭐</h3>
 <div class="price">$89 / month</div>
 </div>
 
@@ -205,7 +255,7 @@ pricingBox.innerHTML = `
 
 contactBox.innerHTML = `
 🌍 International<br>
-<span style="direction:ltr;">+966565245950</span><br>
++966565245950<br>
 📧 odoo.dev2015@gmail.com
 `;
 
@@ -216,13 +266,14 @@ setLinks("966565245950");
 }
 
 function setLinks(num){
-let url = "https://wa.me/" + num;
+let url = "https://wa.me/" + num + "?text=Hi%20I%20want%20a%20demo";
+
 document.getElementById("whatsappBtn").href = url;
 document.getElementById("whatsappFloat").href = url;
 document.getElementById("heroBtn").href = url;
 }
 
-// Countdown
+// TIMER
 let end = localStorage.getItem("offerEnd");
 
 if(!end){
