@@ -66,14 +66,24 @@
 🔗 https://AhmedStackDev.github.io/callflow-3cx-odoo-ai/
 
 ---
-
 ## 📞 التواصل
 
-- 🇪🇬 مصر: +20 109 682 4653  
-- 🌍 الخليج: +966 56 524 5950  
-- 📧 Email: Ahmed.Stack.Dev@gmail.com  
+🚀 جاهز تزود مبيعاتك وتبدأ النظام؟
+
+### 🇪🇬 مصر
+📱 +20 109 682 4653  
+🔗 WhatsApp: https://wa.me/201096824653
 
 ---
+
+### 🌍 الخليج / دولي
+📱 +966 56 524 5950  
+🔗 WhatsApp: https://wa.me/966565245950
+
+---
+
+### 📧 البريد الإلكتروني
+📩 Ahmed.Stack.Dev@gmail.com
 
 ## ⭐ دعم المشروع
 
