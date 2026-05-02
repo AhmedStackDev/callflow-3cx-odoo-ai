@@ -61,7 +61,7 @@
 
 ## 🌐 تجربة النظام
 
-👉 جرّب النظام وشوف السعر حسب بلدك:
+👉 جرّب النظام وشوف السعر:
 
 🔗 https://AhmedStackDev.github.io/callflow-3cx-odoo-ai/
 
